@@ -161,9 +161,9 @@ def prime_twins(n):
 
 
 if __name__ == '__main__':
-    # BSP_1()
-    # BSP_2()
-    # BSP_3()
-    # BSP_7()
-    # BSP_8()
+    BSP_1()
+    BSP_2()
+    BSP_3()
+    BSP_7()
+    BSP_8()
     prime_twins(556)
