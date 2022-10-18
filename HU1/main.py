@@ -135,18 +135,18 @@ def BSP_8():
     print(df_5)
     print(df_3._get_value(df_2['Calories'].idxmax(), 'Item'))
     print(df_3._get_value(df_2['Calories'].idxmin(), 'Item'))
-    cat_dict = dict(zip(df_3['Category'].unique(), [[] for x in range(1, len(df_3['Category'].unique()) + 1)]))
+    cat_dict = dict(zip(df_3['Category'].unique(), [[] for _ in range(1, len(df_3['Category'].unique()) + 1)]))
     [cat_dict[y].append(i) for i, y in enumerate(df_3['Category'])]
     print(cat_dict)
     for j in cat_dict:
         for i, k in enumerate(cat_dict.get(j)):
             cat_dict[j][i] = df_2['Total Fat'].iloc[k]
     print(cat_dict)
-    result_dict = dict(zip(df_3['Category'].unique(), [0 for x in range(1, len(df_3['Category'].unique()) + 1)]))
-    for l in cat_dict:
-        for p in cat_dict[l]:
-            result_dict.update({l: (result_dict.get(l) + p)})
-        result_dict.update({l: (result_dict.get(l) / len(cat_dict[l]))})
+    result_dict = dict(zip(df_3['Category'].unique(), [0 for _ in range(1, len(df_3['Category'].unique()) + 1)]))
+    for index_1 in cat_dict:
+        for p in cat_dict[index_1]:
+            result_dict.update({index_1: (result_dict.get(index_1) + p)})
+        result_dict.update({index_1: (result_dict.get(index_1) / len(cat_dict[index_1]))})
     print(result_dict)
     print(max(result_dict, key=result_dict.get))
 
@@ -154,9 +154,9 @@ def BSP_8():
 def prime_twins(n):
     list_1 = [num for num in range(1, n) if check_prime(num) == "num is a prime number"]
     list_2 = []
-    for indx, x in enumerate(list_1[1:]):
-        if x - list_1[indx] == 2:
-            list_2.append((list_1[indx], x))
+    for index, x in enumerate(list_1[1:]):
+        if x - list_1[index] == 2:
+            list_2.append((list_1[index], x))
     print(list_2)
 
 
